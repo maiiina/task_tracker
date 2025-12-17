@@ -17,8 +17,8 @@ def add_task():
             print("Could not load existing tasks, starting fresh.")
 
     # Add new task
-    add_task = input("Enter task: ")
-    my_tasks.append(add_task)
+    new_task = input("Enter task: ")
+    my_tasks.append(new_task)
 
     # Save back to file
     try:
@@ -28,8 +28,12 @@ def add_task():
     except Exception as e:
         print(f"Error saving file: {e}")
 
-    print("Current tasks:", my_tasks)
-
+    # print tasks
+    print("Current tasks: ")
+    for task in my_tasks:
+        print(f"- {task}")
+    else:
+        print("no tasks available!")
 
 # test
 add_task()
